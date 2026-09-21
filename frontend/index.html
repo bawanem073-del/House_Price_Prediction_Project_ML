@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="HousePrice AI - ML-powered Melbourne house price prediction" />
+
+    <title>HousePrice AI | Melbourne House Price Prediction</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS is in the same frontend folder -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="#home" class="brand">
+                <span class="brand-icon">🏠</span>
+                <div>
+                    <strong>HousePrice AI</strong>
+                    <small>ML-Powered Property Valuation</small>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#predict">Predict</a>
+                <a href="#about">About ML</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                    🌙
+                </button>
+
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu"
+                    aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="home">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span></span>
+                        AI-Powered Melbourne Property Valuation
+                    </div>
+
+                    <h1>
+                        Predict Your House Price
+                        <span>with AI</span>
+                    </h1>
+
+                    <p>
+                        Estimate the market value of a Melbourne property using
+                        machine learning and real-world property characteristics.
+                        Enter your property details and get an instant prediction.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#predict" class="btn btn-primary">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            Start Prediction
+                        </a>
+
+                        <a href="#about" class="btn btn-secondary">
+                            <i class="fa-solid fa-circle-info"></i>
+                            How It Works
+                        </a>
+                    </div>
+
+                    <div class="hero-features">
+
+                        <div class="feature-badge">
+                            <i class="fa-solid fa-brain"></i>
+                            Machine Learning
+                        </div>
+
+                        <div class="feature-badge">
+                            <i class="fa-solid fa-bolt"></i>
+                            Fast Prediction
+                        </div>
+
+                        <div class="feature-badge">
+                            <i class="fa-solid fa-server"></i>
+                            Real-Time API
+                        </div>
+
+                        <div class="feature-badge">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Melbourne Property Data
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="floating-card card-one">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <div>
+                            <strong>AI Prediction</strong>
+                            <span>Real-time analysis</span>
+                        </div>
+                    </div>
+
+                    <div class="house-illustration">
+                        <div class="sky-circle"></div>
+
+                        <div class="house">
+                            <div class="roof"></div>
+
+                            <div class="house-body">
+
+                                <div class="window window-left">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <div class="door">
+                                    <span></span>
+                                </div>
+
+                                <div class="window window-right">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="tree tree-left">
+                            <div class="tree-top"></div>
+                            <div class="tree-trunk"></div>
+                        </div>
+
+                        <div class="tree tree-right">
+                            <div class="tree-top"></div>
+                            <div class="tree-trunk"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card card-two">
+                        <i class="fa-solid fa-house-circle-check"></i>
+                        <div>
+                            <strong>Property Value</strong>
+                            <span>ML estimated</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PREDICTION ================= -->
+        <section class="prediction-section" id="predict">
+
+            <div class="section-heading">
+                <span class="section-label">PROPERTY VALUATION</span>
+
+                <h2>
+                    🏠 Property Details
+                </h2>
+
+                <p>
+                    Enter the property characteristics below to generate an
+                    AI-powered estimated market price.
+                </p>
+            </div>
+
+
+            <div class="prediction-wrapper">
+
+                <form id="predictionForm" class="prediction-card" novalidate>
+
+                    <div class="form-header">
+                        <div>
+                            <h3>Property Information</h3>
+                            <p>All fields are required for prediction.</p>
+                        </div>
+
+                        <div class="form-status">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Secure Input
+                        </div>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <!-- Rooms -->
+                        <div class="form-group">
+                            <label for="Rooms">
+                                <span>
+                                    <i class="fa-solid fa-bed"></i>
+                                    Rooms
+                                </span>
+                                <small>Number of rooms</small>
+                            </label>
+
+                            <input type="number" id="Rooms" name="Rooms" min="0" max="20" step="1" placeholder="e.g. 3"
+                                required />
+
+                            <span class="field-error" id="Rooms-error"></span>
+                        </div>
+
+
+                        <!-- Bathroom -->
+                        <div class="form-group">
+                            <label for="Bathroom">
+                                <span>
+                                    <i class="fa-solid fa-bath"></i>
+                                    Bathroom
+                                </span>
+                                <small>Number of bathrooms</small>
+                            </label>
+
+                            <input type="number" id="Bathroom" name="Bathroom" min="0" max="10" step="1"
+                                placeholder="e.g. 2" required />
+
+                            <span class="field-error" id="Bathroom-error"></span>
+                        </div>
+
+
+                        <!-- Car -->
+                        <div class="form-group">
+                            <label for="Car">
+                                <span>
+                                    <i class="fa-solid fa-car"></i>
+                                    Car
+                                </span>
+                                <small>Parking spaces</small>
+                            </label>
+
+                            <input type="number" id="Car" name="Car" min="0" max="5" step="1" placeholder="e.g. 1"
+                                required />
+
+                            <span class="field-error" id="Car-error"></span>
+                        </div>
+
+
+                        <!-- Distance -->
+                        <div class="form-group">
+                            <label for="Distance">
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Distance
+                                </span>
+                                <small>Distance from CBD</small>
+                            </label>
+
+                            <div class="input-with-unit">
+                                <input type="number" id="Distance" name="Distance" min="0" step="0.1"
+                                    placeholder="e.g. 5.5" required />
+                                <span>km</span>
+                            </div>
+
+                            <span class="field-error" id="Distance-error"></span>
+                        </div>
+
+
+                        <!-- BuildingArea -->
+                        <div class="form-group">
+                            <label for="BuildingArea">
+                                <span>
+                                    <i class="fa-solid fa-building"></i>
+                                    Building Area
+                                </span>
+                                <small>Total building area</small>
+                            </label>
+
+                            <div class="input-with-unit">
+                                <input type="number" id="BuildingArea" name="BuildingArea" min="0" step="0.1"
+                                    placeholder="e.g. 150" required />
+                                <span>m²</span>
+                            </div>
+
+                            <span class="field-error" id="BuildingArea-error"></span>
+                        </div>
+
+
+                        <!-- Landsize -->
+                        <div class="form-group">
+                            <label for="Landsize">
+                                <span>
+                                    <i class="fa-solid fa-ruler-combined"></i>
+                                    Landsize
+                                </span>
+                                <small>Total land area</small>
+                            </label>
+
+                            <div class="input-with-unit">
+                                <input type="number" id="Landsize" name="Landsize" min="0" step="0.1"
+                                    placeholder="e.g. 300" required />
+                                <span>m²</span>
+                            </div>
+
+                            <span class="field-error" id="Landsize-error"></span>
+                        </div>
+
+
+                        <!-- Age - FLOAT -->
+                        <div class="form-group">
+                            <label for="Age">
+                                <span>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    Age
+                                </span>
+                                <small>Property age</small>
+                            </label>
+
+                            <div class="input-with-unit">
+                                <input type="number" id="Age" name="Age" min="0" step="0.1" placeholder="e.g. 10.5"
+                                    required />
+                                <span>years</span>
+                            </div>
+
+                            <span class="field-error" id="Age-error"></span>
+                        </div>
+
+
+                        <!-- Type -->
+                        <div class="form-group">
+                            <label for="Type">
+                                <span>
+                                    <i class="fa-solid fa-house"></i>
+                                    Property Type
+                                </span>
+                                <small>Property category</small>
+                            </label>
+
+                            <select id="Type" name="Type" required>
+                                <option value="">Select property type</option>
+                                <option value="h">House</option>
+                                <option value="t">Townhouse</option>
+                                <option value="u">Unit</option>
+                            </select>
+
+                            <span class="field-error" id="Type-error"></span>
+                        </div>
+
+
+                        <!-- Suburb -->
+                        <div class="form-group">
+                            <label for="Grouped_Suburb">
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Suburb
+                                </span>
+                                <small>Grouped suburb</small>
+                            </label>
+
+                            <select id="Grouped_Suburb" name="Grouped_Suburb" required>
+                                <option value="">Select suburb</option>
+                                <option value="Other">Other</option>
+                                <option value="Reservoir">Reservoir</option>
+                                <option value="Richmond">Richmond</option>
+                                <option value="Bentleigh East">Bentleigh East</option>
+                                <option value="Preston">Preston</option>
+                                <option value="Brunswick">Brunswick</option>
+                                <option value="Essendon">Essendon</option>
+                                <option value="South Yarra">South Yarra</option>
+                                <option value="Glen Iris">Glen Iris</option>
+                                <option value="Hawthorn">Hawthorn</option>
+                            </select>
+
+                            <span class="field-error" id="Grouped_Suburb-error"></span>
+                        </div>
+
+
+                        <!-- Seller -->
+                        <div class="form-group">
+                            <label for="Grouped_SellerG">
+                                <span>
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    Seller
+                                </span>
+                                <small>Grouped seller group</small>
+                            </label>
+
+                            <select id="Grouped_SellerG" name="Grouped_SellerG" required>
+                                <option value="">Select seller</option>
+                                <option value="Other">Other</option>
+                                <option value="Nelson">Nelson</option>
+                                <option value="Jellis">Jellis</option>
+                                <option value="hockingstuart">hockingstuart</option>
+                                <option value="Barry">Barry</option>
+                                <option value="Ray">Ray</option>
+                                <option value="Marshall">Marshall</option>
+                                <option value="Buxton">Buxton</option>
+                                <option value="Biggin">Biggin</option>
+                                <option value="Brad">Brad</option>
+                            </select>
+
+                            <span class="field-error" id="Grouped_SellerG-error"></span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Form message -->
+                    <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
+
+
+                    <!-- Predict button -->
+                    <button type="submit" class="predict-button" id="predictButton">
+                        <span class="button-content" id="buttonContent">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            Predict House Price
+                        </span>
+
+                        <span class="button-loading" id="buttonLoading">
+                            <span class="spinner"></span>
+                            Analyzing Property...
+                        </span>
+                    </button>
+
+                    <p class="api-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Powered by a FastAPI machine learning backend.
+                    </p>
+
+                </form>
+
+
+                <!-- ================= RESULT ================= -->
+                <div class="result-card" id="resultCard" aria-live="polite" hidden>
+
+                    <div class="result-icon">
+                        <i class="fa-solid fa-house-circle-check"></i>
+                    </div>
+
+                    <span class="result-label">
+                        AI Estimated Market Price
+                    </span>
+
+                    <h3>Estimated Property Value</h3>
+
+                    <div class="price" id="predictedPrice">
+                        $0
+                    </div>
+
+                    <p>
+                        Based on the property characteristics you provided,
+                        the machine learning model generated this estimated value.
+                    </p>
+
+                    <div class="result-actions">
+
+                        <button type="button" class="btn btn-primary" id="predictAgain">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            Predict Again
+                        </button>
+
+                        <button type="button" class="btn btn-secondary" id="clearForm">
+                            <i class="fa-solid fa-eraser"></i>
+                            Clear Form
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ML ================= -->
+        <section class="about-section" id="about">
+
+            <div class="section-heading">
+                <span class="section-label">MACHINE LEARNING</span>
+
+                <h2>
+                    How HousePrice AI Works
+                </h2>
+
+                <p>
+                    The application connects a simple property form with a
+                    FastAPI machine learning prediction service.
+                </p>
+            </div>
+
+
+            <div class="process-grid">
+
+                <div class="process-card">
+                    <div class="process-number">01</div>
+
+                    <div class="process-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+
+                    <h3>Property Features</h3>
+
+                    <p>
+                        Property characteristics such as rooms, bathrooms,
+                        land size, building area, location and property type
+                        are collected.
+                    </p>
+                </div>
+
+
+                <div class="process-card">
+                    <div class="process-number">02</div>
+
+                    <div class="process-icon">
+                        <i class="fa-solid fa-filter"></i>
+                    </div>
+
+                    <h3>Data Processing</h3>
+
+                    <p>
+                        The entered values are validated and converted into
+                        the exact JSON structure expected by the API.
+                    </p>
+                </div>
+
+
+                <div class="process-card">
+                    <div class="process-number">03</div>
+
+                    <div class="process-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <h3>ML Prediction</h3>
+
+                    <p>
+                        The FastAPI backend sends the property information
+                        through the trained machine learning prediction pipeline.
+                    </p>
+                </div>
+
+
+                <div class="process-card">
+                    <div class="process-number">04</div>
+
+                    <div class="process-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <h3>Instant Result</h3>
+
+                    <p>
+                        The predicted property price returned by the API is
+                        displayed instantly in a clear currency format.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Flow -->
+            <div class="flow-container">
+
+                <div class="flow-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Property Details</span>
+                </div>
+
+                <div class="flow-line"></div>
+
+                <div class="flow-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Data Processing</span>
+                </div>
+
+                <div class="flow-line"></div>
+
+                <div class="flow-item">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>ML Model</span>
+                </div>
+
+                <div class="flow-line"></div>
+
+                <div class="flow-item">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <span>Predicted Price</span>
+                </div>
+
+            </div>
+
+
+            <!-- Built With -->
+            <div class="built-section">
+
+                <div class="built-heading">
+                    <span class="section-label">TECHNOLOGY STACK</span>
+                    <h2>Built With</h2>
+                </div>
+
+                <div class="tech-grid">
+
+                    <div class="tech-card">
+                        <i class="fa-brands fa-python"></i>
+                        <span>Python</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="fa-solid fa-table"></i>
+                        <span>Pandas</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>NumPy</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>Scikit-learn</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="fa-solid fa-server"></i>
+                        <span>FastAPI</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Pydantic</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Joblib</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="fa-brands fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="fa-brands fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+     CONTACT ME SECTION
+========================= -->
+        <section class="contact-section" id="contact">
+            <div class="section-container">
+
+                <div class="section-heading">
+                    <span class="section-badge">📬 Get In Touch</span>
+                    <h2>Contact Me</h2>
+                    <p>
+                        Have a question about this project, want to collaborate,
+                        or interested in discussing Machine Learning?
+                        Feel free to reach out.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+
+                    <!-- Contact Information -->
+                    <div class="contact-info-card">
+                        <div class="contact-icon">👨‍💻</div>
+
+                        <h3>Let's Connect</h3>
+                        <p>
+                            I'm a Machine Learning enthusiast interested in
+                            AI/ML engineering, real-world ML projects, and
+                            building practical intelligent applications.
+                        </p>
+
+                        <div class="contact-details">
+
+                            <a href="mailto:your-email@example.com" class="contact-item">
+                                <span class="contact-item-icon">✉️</span>
+                                <div>
+                                    <strong>Email</strong>
+                                    <span>bawanem073@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/maheshbawane/" target="_blank"
+                                rel="noopener noreferrer" class="contact-item">
+                                <span class="contact-item-icon">💼</span>
+                                <div>
+                                    <strong>LinkedIn</strong>
+                                    <span>Connect with me</span>
+                                </div>
+                            </a>
+
+                            <a href="https://github.com/bawanem073-del" target="_blank" rel="noopener noreferrer"
+                                class="contact-item">
+                                <span class="contact-item-icon">🐙</span>
+                                <div>
+                                    <strong>GitHub</strong>
+                                    <span>View my projects</span>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Contact Message Form -->
+                    <div class="contact-form-card">
+
+                        <h3>Send Me a Message</h3>
+                        <p class="contact-form-subtitle">
+                            I'd be happy to hear from you.
+                        </p>
+
+                        <form id="contactForm">
+
+                            <div class="contact-form-row">
+
+                                <div class="contact-field">
+                                    <label for="contactName">Your Name</label>
+                                    <input type="text" id="contactName" name="contactName" placeholder="Enter your name"
+                                        required />
+                                </div>
+
+                                <div class="contact-field">
+                                    <label for="contactEmail">Email Address</label>
+                                    <input type="email" id="contactEmail" name="contactEmail"
+                                        placeholder="you@example.com" required />
+                                </div>
+
+                            </div>
+
+                            <div class="contact-field">
+                                <label for="contactSubject">Subject</label>
+                                <input type="text" id="contactSubject" name="contactSubject"
+                                    placeholder="What would you like to discuss?" required />
+                            </div>
+
+                            <div class="contact-field">
+                                <label for="contactMessage">Message</label>
+                                <textarea id="contactMessage" name="contactMessage" rows="5"
+                                    placeholder="Write your message..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="contact-submit-btn">
+                                ✉️ Send Message
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    <span>🏠</span>
+                    <strong>HousePrice AI</strong>
+                </div>
+
+                <p>
+                    Machine Learning Based House Price Prediction
+                </p>
+
+                <small>
+                    Built as a Machine Learning project.
+                </small>
+
+            </div>
+
+            <div class="footer-info">
+                <span>© 2026 HousePrice AI</span>
+                <span>Melbourne Property Prediction</span>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span id="toastMessage"></span>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

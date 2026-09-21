@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # House Price Prediction using Machine Learning
 
 # Project Overview
@@ -103,3 +104,5 @@ Using pipelines to prevent data leakage
 Comparing multiple models before final selection
 
 Based on the evaluation metrics, Random Forest Regressor was selected as the final model for house price prediction.
+=======
+>>>>>>> b102df9 (Added API and Frontend)
