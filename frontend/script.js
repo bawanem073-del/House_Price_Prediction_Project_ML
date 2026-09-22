@@ -11,10 +11,18 @@
 
 // FastAPI backend URL
 const CONFIG = {
-    API_BASE_URL: "https://house-price-prediction-project-ml-ra9d.onrender.com/",
+    API_BASE_URL: "https://house-price-prediction-project-ml-ra9d.onrender.com",
     PREDICT_ENDPOINT: "/predict"
 };
 
+
+fetch("https://house-price-prediction-project-ml-ra9d.onrender.com/predict", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+})
 
 // If the frontend is served from another origin/port,
 // FastAPI may require CORS configuration.
