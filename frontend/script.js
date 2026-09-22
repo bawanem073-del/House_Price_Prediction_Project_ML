@@ -10,7 +10,7 @@
    ========================================================= */
 
 // FastAPI backend URL
-const API_URL = "http://127.0.0.1:8000/predict";
+const API_URL = "https://house-price-prediction-project-ml-ra9d.onrender.com";
 
 // If the frontend is served from another origin/port,
 // FastAPI may require CORS configuration.
