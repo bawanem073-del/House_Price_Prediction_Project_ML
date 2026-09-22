@@ -93,8 +93,9 @@ def predict(data: HouseData):
     }])
 
     prediction = model.predict(input_row)
+    actual_price = np.expm1(prediction[0])
 
-    return PredictionResponse(predicted_price=prediction[0])
+    return PredictionResponse(predicted_price=actual_price)
 
 
 @app.get("/")
