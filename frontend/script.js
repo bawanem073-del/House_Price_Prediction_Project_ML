@@ -271,12 +271,37 @@ function resetPredictionForm() {
 function setupContactForm() {
     if (!contactForm) return;
 
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const name = document.getElementById("contactName")?.value;
-        showToast(`Thank you, ${name || "there"}! Your message has been sent.`);
-        contactForm.reset();
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        const formData = new FormData(contactForm);
+        
+        // Paste your Web3Forms access key here:
+        formData.append("access_key", "9a07fc3d-2753-4ce0-a6f3-54f3b8fe84e1");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                showToast("Thank you! Your message has been sent.");
+                contactForm.reset();
+            } else {
+                showToast("Failed to send message. Please try again.");
+            }
+        } catch (error) {
+            console.error("Contact Form Error:", error);
+            showToast("An error occurred while sending your message.");
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+        }
     });
 }
 
