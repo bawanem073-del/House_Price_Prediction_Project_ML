@@ -10,7 +10,11 @@
    ========================================================= */
 
 // FastAPI backend URL
-const API_URL = "https://house-price-prediction-project-ml-ra9d.onrender.com";
+const CONFIG = {
+    API_BASE_URL: "https://house-price-prediction-project-ml-ra9d.onrender.com/",
+    PREDICT_ENDPOINT: "/predict"
+};
+
 
 // If the frontend is served from another origin/port,
 // FastAPI may require CORS configuration.
